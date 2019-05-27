@@ -6,6 +6,7 @@ eureka:
 spring:
   application:
     name: eureka
-#server:
-#  port: 8761
+server:
+  port: 8761
+
 
