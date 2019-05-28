@@ -16,7 +16,6 @@ public class ProductServiceImpl implements ProductService {
     private ProductInfoRepository productInfoRepository;
 
     @Override
-
     public List<ProductInfo> findAllUp() {
         return productInfoRepository.findByProductStatus(ProductStatusEnum.UP.getCode());
     }
