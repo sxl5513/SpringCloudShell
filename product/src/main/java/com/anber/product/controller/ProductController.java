@@ -2,6 +2,7 @@ package com.anber.product.controller;
 
 import com.anber.product.dataobject.ProductCategory;
 import com.anber.product.dataobject.ProductInfo;
+import com.anber.product.dto.CartDto;
 import com.anber.product.enums.ResultEnum;
 import com.anber.product.service.CategoryService;
 import com.anber.product.service.ProductService;
@@ -11,9 +12,7 @@ import com.anber.product.vo.ProductVO;
 import com.anber.product.vo.ResultVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,5 +60,20 @@ public class ProductController {
             productVOList.add(vo);
         }
         return ResultVOUtil.success(productVOList);
+    }
+
+    /**
+     * 获取商品列表(给订单服务用的)
+     * @param productIdList
+     * @return
+     */
+    @PostMapping("/listForOrder")
+    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList) {
+        return productService.findList(productIdList);
+    }
+
+    @PostMapping("/decreaseStock")
+    public void decreaseStock(@RequestBody List<CartDto> decreaseStockInputList) {
+        productService.decreaseStock(decreaseStockInputList);
     }
 }

@@ -1,6 +1,7 @@
 package com.anber.product.service.impl;
 
 import com.anber.product.dataobject.ProductInfo;
+import com.anber.product.dto.CartDto;
 import com.anber.product.enums.ProductStatusEnum;
 import com.anber.product.repository.ProductInfoRepository;
 import com.anber.product.service.ProductService;
@@ -18,5 +19,15 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductInfo> findAllUp() {
         return productInfoRepository.findByProductStatus(ProductStatusEnum.UP.getCode());
+    }
+
+    @Override
+    public List<ProductInfo> findList(List<String> productIdList) {
+        return productInfoRepository.findByProductIdIn(productIdList);
+    }
+
+    @Override
+    public void decreaseStock(List<CartDto> decreaseStockInputList) {
+
     }
 }
