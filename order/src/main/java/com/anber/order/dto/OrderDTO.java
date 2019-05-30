@@ -1,6 +1,6 @@
 package com.anber.order.dto;
 
-import com.imooc.order.dataobject.OrderDetail;
+import com.anber.order.dataobject.OrderDetail;
 import lombok.Data;
 
 import java.math.BigDecimal;
