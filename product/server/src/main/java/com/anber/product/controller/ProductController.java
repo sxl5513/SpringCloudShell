@@ -2,7 +2,6 @@ package com.anber.product.controller;
 
 import com.anber.product.dataobject.ProductCategory;
 import com.anber.product.dataobject.ProductInfo;
-import com.anber.product.common.CartDto;
 import com.anber.product.service.CategoryService;
 import com.anber.product.service.ProductService;
 import com.anber.product.utils.ResultVOUtil;
@@ -12,6 +11,7 @@ import com.anber.product.vo.ResultVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import com.anber.product.common.DecreaseStockInput;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +72,7 @@ public class ProductController {
     }
 
     @PostMapping("/decreaseStock")
-    public void decreaseStock(@RequestBody List<CartDto> decreaseStockInputList) {
+    public void decreaseStock(@RequestBody List<DecreaseStockInput> decreaseStockInputList) {
         productService.decreaseStock(decreaseStockInputList);
     }
 }

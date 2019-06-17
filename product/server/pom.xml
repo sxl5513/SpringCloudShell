@@ -42,6 +42,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.anber</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+            <artifactId>product-common</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

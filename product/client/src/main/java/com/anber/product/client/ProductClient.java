@@ -1,4 +1,4 @@
-package com.anber.product;
+package com.anber.product.client;
 
 import com.anber.product.common.DecreaseStockInput;
 import com.anber.product.common.ProductInfoOutput;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient("/product")
+@FeignClient("product")
 public interface ProductClient {
 
     @PostMapping("/product/listForOrder")

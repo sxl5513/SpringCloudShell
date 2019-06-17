@@ -1,7 +1,7 @@
 package com.anber.product.service.impl;
 
+import com.anber.product.common.DecreaseStockInput;
 import com.anber.product.dataobject.ProductInfo;
-import com.anber.product.common.CartDto;
 import com.anber.product.enums.ProductStatusEnum;
 import com.anber.product.enums.ResultEnum;
 import com.anber.product.exception.ProductException;
@@ -32,8 +32,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public void decreaseStock(List<CartDto> decreaseStockInputList) {
-        for(CartDto cart : decreaseStockInputList){
+    public void decreaseStock(List<DecreaseStockInput> decreaseStockInputList) {
+        for(DecreaseStockInput cart : decreaseStockInputList){
             //判断商品是否存在
             Optional<ProductInfo> productInfoOptional = productInfoRepository.findById(cart.getProductId());
             if (!productInfoOptional.isPresent()){

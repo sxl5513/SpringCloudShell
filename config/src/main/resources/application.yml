@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          username: 526460465@qq.com
+          password: su55135155
+          basedir: D:\developer\SpringCloudShell\config\basedir
+          uri: https://github.com/sxl5513/SpringCloudSell-config.git
+          skip-ssl-validation: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

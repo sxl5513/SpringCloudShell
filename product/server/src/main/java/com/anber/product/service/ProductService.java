@@ -1,8 +1,7 @@
 package com.anber.product.service;
 
+import com.anber.product.common.DecreaseStockInput;
 import com.anber.product.dataobject.ProductInfo;
-import com.anber.product.common.CartDto;
-
 import java.util.List;
 
 public interface ProductService {
@@ -15,5 +14,5 @@ public interface ProductService {
 
     List<ProductInfo> findList(List<String> productIdList);
 
-    void decreaseStock(List<CartDto> decreaseStockInputList);
+    void decreaseStock(List<DecreaseStockInput> decreaseStockInputList);
 }

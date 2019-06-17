@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: com.anber.order
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: anber
+    password: su55135155
+    url: jdbc:mysql://127.0.0.1/SpringCloud_Sell?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
